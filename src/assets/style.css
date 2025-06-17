@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #b61414;
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b61414;
+}
+
+@layer components {
+    .menu {
+        @apply w-full text-[14px] text-start flex items-center gap-x-2.5 py-[8px] px-2.5 hs-accordion-active:bg-[#b61414] hs-accordion-active:text-white text-gray-900 rounded-md hover:bg-[#b61414] hover:text-white duration-150;
+    }
+
+    .menu-icon {
+        @apply text-[19px] hs-accordion-active:text-[#b61414];
+    }
+
+    .sub-menu {
+        @apply flex items-center gap-x-1 py-[6px] px-1 text-[13px] text-neutral-700 rounded-lg hover:text-[#b61414] duration-100;
+    }
+
+    .sub-menu-content {
+        @apply w-full mt-[5px] rounded-lg overflow-hidden transition-[height] duration-300 hidden;
+    }
+
+    .sub-menu-icon {
+        @apply text-[25px] text-gray-400;
+    }
+
+
+    .card{
+        @apply w-full border-gray-300 my-[20px] bg-[#FFFFFF] space-y-[20px] placeholder:shadow-lg shadow-gray-200;
+    }
+
+    .card-title{
+        @apply border-b border-b-gray-400 py-[13px] px-[15px] flex justify-between items-center;
+    }
+
+    .card-body{
+        @apply w-full p-[15px] h-full dark:text-gray-200;
+    } 
+
+
+    /* input class */
+
+    .label {
+        @apply block text-sm pt-2 text-gray-600 font-medium mb-2 dark:text-gray-100 ;
+    }
+
+    .input {
+        @apply py-3 px-4 block w-full border border-gray-400 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 focus:outline-none;
+    }
+    /* input class */
+}
