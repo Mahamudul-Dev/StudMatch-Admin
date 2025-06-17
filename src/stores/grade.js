@@ -31,7 +31,7 @@ export const GradeStore = defineStore('grade', () => {
     const getGrades = async () => {
         grades.value = [];
         isLoading.value = true;
-        let res = await axios.get(`https://api.studmatch.app/institute/grade`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/institute/grade`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -50,7 +50,7 @@ export const GradeStore = defineStore('grade', () => {
         grades.value = [];
         isLoading.value = true;
         try {
-            let res = await axios.post(`https://api.studmatch.app/institute/grade/`, gradeForm.value, {
+            let res = await axios.post(`https://datemeapi.codejet.dev/institute/grade/`, gradeForm.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -85,7 +85,7 @@ export const GradeStore = defineStore('grade', () => {
 
 
         try {
-            let res = await axios.put(`https://api.studmatch.app/institute/grade/${gradeForm.value.id}`, gradeForm.value, {
+            let res = await axios.put(`https://datemeapi.codejet.dev/institute/grade/${gradeForm.value.id}`, gradeForm.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -111,7 +111,7 @@ export const GradeStore = defineStore('grade', () => {
         grades.value = [];
         isLoading.value = true;
         try {
-            let res = await axios.delete(`https://api.studmatch.app/institute/grade/${id}`, {
+            let res = await axios.delete(`https://datemeapi.codejet.dev/institute/grade/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }

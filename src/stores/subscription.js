@@ -43,7 +43,7 @@ export const SubscriptionStore = defineStore('subscription', () => {
     const getSubscription = async () => {
         subscriptions.value = [];
         isLoading.value = true;
-        let res = await axios.get(`https://api.studmatch.app/subscription/packages`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/subscription/packages`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -63,7 +63,7 @@ export const SubscriptionStore = defineStore('subscription', () => {
         isLoading.value = true;
 
         try {
-            let res = await axios.post(`https://api.studmatch.app/subscription/package/create`, subscriptionInputs.value, {
+            let res = await axios.post(`https://datemeapi.codejet.dev/subscription/package/create`, subscriptionInputs.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -88,7 +88,7 @@ export const SubscriptionStore = defineStore('subscription', () => {
         isSkeleton.value = true;
         HSOverlay.open('#show-institute');
 
-        let res = await axios.get(`https://api.studmatch.app/institute/${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/institute/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -108,7 +108,7 @@ export const SubscriptionStore = defineStore('subscription', () => {
 
         HSOverlay.open('#edit-subscription');
 
-        let res = await axios.get(`https://api.studmatch.app/subscription/package/${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/subscription/package/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -140,7 +140,7 @@ export const SubscriptionStore = defineStore('subscription', () => {
         isLoading.value = true;
 
         try {
-            let res = await axios.put(`https://api.studmatch.app/subscription/package/${subscriptionInputs.value.id}`, subscriptionInputs.value, {
+            let res = await axios.put(`https://datemeapi.codejet.dev/subscription/package/${subscriptionInputs.value.id}`, subscriptionInputs.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }

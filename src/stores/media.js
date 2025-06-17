@@ -28,7 +28,7 @@ export const MediaStore = defineStore('media', () => {
         photoMediaFiles.value = [];
         isSkeleton.value = true;
 
-        let res = await axios.get(`https://api.studmatch.app/media/photos?page=1&limit=15`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/media/photos?page=1&limit=15`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -47,7 +47,7 @@ export const MediaStore = defineStore('media', () => {
     const loadMorePhotoMedia = async () => {
         isLoading.value = true;
         photoMediaCurrentPage.value = photoMediaCurrentPage.value + 1;
-        let res = await axios.get(`https://api.studmatch.app/media/photos?page=${photoMediaCurrentPage.value}&limit=10`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/media/photos?page=${photoMediaCurrentPage.value}&limit=10`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -75,7 +75,7 @@ export const MediaStore = defineStore('media', () => {
     const updatePhotoMediaFile = async (id) => {
         try {
             isLoading.value = true;
-            const res = await axios.put(`https://api.studmatch.app/media/photos/${photoMediaFile.value.id}`, photoMediaFile.value, {
+            const res = await axios.put(`https://datemeapi.codejet.dev/media/photos/${photoMediaFile.value.id}`, photoMediaFile.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -95,7 +95,7 @@ export const MediaStore = defineStore('media', () => {
 
     const deletePhotoMediaFile = async (id, type='default') => {
         try {
-            const res = await axios.delete(`https://api.studmatch.app/media/${id}`, {
+            const res = await axios.delete(`https://datemeapi.codejet.dev/media/${id}`, {
                 data: {type: type},
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
@@ -117,7 +117,7 @@ export const MediaStore = defineStore('media', () => {
         videoMediaFiles.value = [];
         isSkeleton.value = true;
 
-        let res = await axios.get(`https://api.studmatch.app/media/videos?page=1&limit=15`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/media/videos?page=1&limit=15`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -135,7 +135,7 @@ export const MediaStore = defineStore('media', () => {
 
     const loadMoreVideoMedia = async () => {
         videoMediaCurrentPage.value = videoMediaCurrentPage.value + 1;
-        let res = await axios.get(`https://api.studmatch.app/media/videos?page=${videoMediaCurrentPage.value}&limit=10`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/media/videos?page=${videoMediaCurrentPage.value}&limit=10`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }

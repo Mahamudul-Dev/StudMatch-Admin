@@ -56,7 +56,7 @@ export const InstituteStore = defineStore('institute', () => {
         institutes.value = [];
         isLoading.value = true;
 
-        let res = await axios.get(`https://api.studmatch.app/institute`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/institute`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -83,7 +83,7 @@ export const InstituteStore = defineStore('institute', () => {
 
 
     const getDepartments = async () => {
-        let res = await axios.get(`https://api.studmatch.app/institute/depertment`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/institute/depertment`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -98,7 +98,7 @@ export const InstituteStore = defineStore('institute', () => {
 
 
     const getGrades = async () => {
-        let res = await axios.get(`https://api.studmatch.app/institute/grade`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/institute/grade`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -119,7 +119,7 @@ export const InstituteStore = defineStore('institute', () => {
                 formData.append(key, instituteInputs.value[key]);
             }
 
-            let res = await axios.post(`https://api.studmatch.app/institute`, formData, {
+            let res = await axios.post(`https://datemeapi.codejet.dev/institute`, formData, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`,
                     'Host' : ''
@@ -144,7 +144,7 @@ export const InstituteStore = defineStore('institute', () => {
         isSkeleton.value = true;
         HSOverlay.open('#show-institute');
 
-        let res = await axios.get(`https://api.studmatch.app/institute/${id}?gallery=true`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/institute/${id}?gallery=true`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -163,7 +163,7 @@ export const InstituteStore = defineStore('institute', () => {
         isSkeleton.value = true;
         HSOverlay.open('#edit-institute');
 
-        let res = await axios.get(`https://api.studmatch.app/institute/${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/institute/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -197,7 +197,7 @@ export const InstituteStore = defineStore('institute', () => {
                 formData.append(key, instituteInputs.value[key]);
             }
 
-            let res = await axios.put(`https://api.studmatch.app/institute/${instituteInputs.value.id}`, formData, {
+            let res = await axios.put(`https://datemeapi.codejet.dev/institute/${instituteInputs.value.id}`, formData, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -236,7 +236,7 @@ export const InstituteStore = defineStore('institute', () => {
         formData.append('authorId', galleryInputs.value.authorId);
 
         try {
-            let res = await axios.post(`https://api.studmatch.app/gallery/institute`, formData, {
+            let res = await axios.post(`https://datemeapi.codejet.dev/gallery/institute`, formData, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`,
                     'Content-Type': 'multipart/form-data'

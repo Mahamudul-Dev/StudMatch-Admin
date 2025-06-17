@@ -31,7 +31,7 @@ export const DepartmentStore = defineStore('department', () => {
     const getDepartments = async () => {
         departments.value = [];
         isLoading.value = true;
-        let res = await axios.get(`https://api.studmatch.app/institute/depertment`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/institute/depertment`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -49,7 +49,7 @@ export const DepartmentStore = defineStore('department', () => {
         departments.value = [];
         isLoading.value = true;
         try {
-            let res = await axios.post(`https://api.studmatch.app/institute/depertment/`, departmentForm.value, {
+            let res = await axios.post(`https://datemeapi.codejet.dev/institute/depertment/`, departmentForm.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -85,7 +85,7 @@ export const DepartmentStore = defineStore('department', () => {
 
 
         try {
-            let res = await axios.put(`https://api.studmatch.app/institute/depertment/${departmentForm.value.id}`, departmentForm.value, {
+            let res = await axios.put(`https://datemeapi.codejet.dev/institute/depertment/${departmentForm.value.id}`, departmentForm.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -111,7 +111,7 @@ export const DepartmentStore = defineStore('department', () => {
         departments.value = [];
         isLoading.value = true;
         try {
-            let res = await axios.delete(`https://api.studmatch.app/institute/depertment/${id}`, {
+            let res = await axios.delete(`https://datemeapi.codejet.dev/institute/depertment/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }

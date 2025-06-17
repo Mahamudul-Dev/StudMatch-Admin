@@ -36,7 +36,7 @@ export const SubscriptionPromoStore = defineStore('subscription-promo', () => {
     const getPromos = async () => {
         promos.value = [];
         isLoading.value = true;
-        let res = await axios.get(`https://api.studmatch.app/subscription/promo`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/subscription/promo`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -53,7 +53,7 @@ export const SubscriptionPromoStore = defineStore('subscription-promo', () => {
 
     const getSubscriptions = async () => {
         subscriptions.value = [];
-        let res = await axios.get(`https://api.studmatch.app/subscription/packages`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/subscription/packages`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -78,7 +78,7 @@ export const SubscriptionPromoStore = defineStore('subscription-promo', () => {
         }
 
         try {
-            let res = await axios.post(`https://api.studmatch.app/subscription/promo/${promoInputs.packageId}`, formData, {
+            let res = await axios.post(`https://datemeapi.codejet.dev/subscription/promo/${promoInputs.packageId}`, formData, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -113,7 +113,7 @@ export const SubscriptionPromoStore = defineStore('subscription-promo', () => {
             }
         }
 
-        let res = await axios.put(`https://api.studmatch.app/subscription/promo/${promoEdit.id}`, formData, {
+        let res = await axios.put(`https://datemeapi.codejet.dev/subscription/promo/${promoEdit.id}`, formData, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -136,7 +136,7 @@ export const SubscriptionPromoStore = defineStore('subscription-promo', () => {
 
     const promoDelete = async (id) => {
 
-        let res = await axios.delete(`https://api.studmatch.app/subscription/promo/${id}`, {
+        let res = await axios.delete(`https://datemeapi.codejet.dev/subscription/promo/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }

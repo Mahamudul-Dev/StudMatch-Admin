@@ -80,7 +80,7 @@ export const UserStore = defineStore('user', () => {
     const getUsers = async (page = 1) => {
         users.value = [];
         isLoading.value = true;
-        let res = await axios.get(`https://api.studmatch.app/user/?page=${page}&limit=${searchInput.limit}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/user/?page=${page}&limit=${searchInput.limit}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -116,7 +116,7 @@ export const UserStore = defineStore('user', () => {
         user.value = {};
         HSOverlay.open('#edit-profile');
 
-        let res = await axios.get(`https://api.studmatch.app/user/${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/user/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -151,7 +151,7 @@ export const UserStore = defineStore('user', () => {
     const updateProfile = async () => {
         try {
             isLoading.value = true;
-        let res = await axios.put(`https://api.studmatch.app/user`, editUser.value, {
+        let res = await axios.put(`https://datemeapi.codejet.dev/user`, editUser.value, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -179,7 +179,7 @@ export const UserStore = defineStore('user', () => {
 
         HSOverlay.open('#show-conversation');
 
-        let res = await axios.get(`https://api.studmatch.app/conversations/?userId=${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/conversations/?userId=${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -197,7 +197,7 @@ export const UserStore = defineStore('user', () => {
         allMessages.value = [''];
         isSkeleton.value = true;
 
-        let res = await axios.get(`https://api.studmatch.app/conversations/${id}?page=1&limit=5&id=${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/conversations/${id}?page=1&limit=5&id=${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -212,7 +212,7 @@ export const UserStore = defineStore('user', () => {
 
 
     const getHobbies = async () => {
-        let res = await axios.get(`https://api.studmatch.app/interests_hobby/hobby`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/interests_hobby/hobby`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -225,7 +225,7 @@ export const UserStore = defineStore('user', () => {
 
 
     const getInterests = async () => {
-        let res = await axios.get(`https://api.studmatch.app/interests_hobby/interests`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/interests_hobby/interests`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -241,7 +241,7 @@ export const UserStore = defineStore('user', () => {
     const getFilteredUsers = async (page = 1) => {
         users.value = [];
         isLoading.value = true;
-        let res = await axios.post(`https://api.studmatch.app/user/filter?page=${page}&limit=${searchInput.limit}`, filters, {
+        let res = await axios.post(`https://datemeapi.codejet.dev/user/filter?page=${page}&limit=${searchInput.limit}`, filters, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`,
                 'Content-Type': 'application/json'
@@ -303,7 +303,7 @@ export const UserStore = defineStore('user', () => {
         user.value = {};
         HSOverlay.open('#show-profile');
 
-        let res = await axios.get(`https://api.studmatch.app/user/${id}?gallery=true`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/user/${id}?gallery=true`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -324,7 +324,7 @@ export const UserStore = defineStore('user', () => {
         editUser.value = {};
         HSOverlay.open('#document-verify');
 
-        let res = await axios.get(`https://api.studmatch.app/user/${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/user/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -347,7 +347,7 @@ export const UserStore = defineStore('user', () => {
         HSOverlay.open('#verification-status-update');
 
 
-        let res = await axios.get(`https://api.studmatch.app/user/${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/user/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -365,7 +365,7 @@ export const UserStore = defineStore('user', () => {
     const updateVerificationStatus = async () => {
         users.value = [];
         isLoading.value = true;
-        let res = await axios.put(`https://api.studmatch.app/user/verificationStatus/${editUser.value.id}`, {value: editUser.value.verificationStatus}, {
+        let res = await axios.put(`https://datemeapi.codejet.dev/user/verificationStatus/${editUser.value.id}`, {value: editUser.value.verificationStatus}, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -389,7 +389,7 @@ export const UserStore = defineStore('user', () => {
         HSOverlay.open('#account-status-update');
 
 
-        let res = await axios.get(`https://api.studmatch.app/user/${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/user/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -407,7 +407,7 @@ export const UserStore = defineStore('user', () => {
     const updateAccountStatus = async () => {
         users.value = [];
         isLoading.value = true;
-        let res = await axios.put(`https://api.studmatch.app/user/accountStatus/${editUser.value.id}`, 
+        let res = await axios.put(`https://datemeapi.codejet.dev/user/accountStatus/${editUser.value.id}`, 
             {
                 value: editUser.value.accountStatus, 
                 ressone : editUser.value.reassone

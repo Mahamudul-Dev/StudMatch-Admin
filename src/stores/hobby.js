@@ -33,7 +33,7 @@ export const HobbyStore = defineStore('hobby', () => {
     const getHobbies = async () => {
         hobbies.value = [];
         isLoading.value = true;
-        let res = await axios.get(`https://api.studmatch.app/interests_hobby/hobby`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/interests_hobby/hobby`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -52,7 +52,7 @@ export const HobbyStore = defineStore('hobby', () => {
         hobbies.value = [];
         isLoading.value = true;
         try {
-            let res = await axios.post(`https://api.studmatch.app/interests_hobby/hobby`, hobbyInputs.value, {
+            let res = await axios.post(`https://datemeapi.codejet.dev/interests_hobby/hobby`, hobbyInputs.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -77,7 +77,7 @@ export const HobbyStore = defineStore('hobby', () => {
 
     //     HSOverlay.open('#edit-hobby');
 
-    //     let res = await axios.get(`https://api.studmatch.app/hobby/package/${id}`, {
+    //     let res = await axios.get(`https://datemeapi.codejet.dev/hobby/package/${id}`, {
     //         headers: {
     //             'Authorization': `Bearer ${auth.token}`
     //         }
@@ -97,7 +97,7 @@ export const HobbyStore = defineStore('hobby', () => {
     //     isLoading.value = true;
 
     //     try {
-    //         let res = await axios.put(`https://api.studmatch.app/hobby/package/${hobbyInputs.value.id}`, hobbyInputs.value, {
+    //         let res = await axios.put(`https://datemeapi.codejet.dev/hobby/package/${hobbyInputs.value.id}`, hobbyInputs.value, {
     //             headers: {
     //                 'Authorization': `Bearer ${auth.token}`
     //             }
@@ -123,7 +123,7 @@ export const HobbyStore = defineStore('hobby', () => {
         hobbies.value = [];
         isLoading.value = true;
         try {
-            let res = await axios.delete(`https://api.studmatch.app/interests_hobby/hobby/${id}`, {
+            let res = await axios.delete(`https://datemeapi.codejet.dev/interests_hobby/hobby/${id}`, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }

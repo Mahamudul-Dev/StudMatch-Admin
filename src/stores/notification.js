@@ -19,7 +19,7 @@ export const NotificationStore = defineStore('notification', () => {
 
     const sendNotification = async () => {
         isLoading.value = true;
-        let res = await axios.post(`https://api.studmatch.app/notification/send`, notificationDetails.value, {
+        let res = await axios.post(`https://datemeapi.codejet.dev/notification/send`, notificationDetails.value, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -37,7 +37,7 @@ export const NotificationStore = defineStore('notification', () => {
 
     const sendNotificationToAll = async () => {
         isLoading.value = true;
-        let res = await axios.post(`https://api.studmatch.app/notification/send/all`, notificationDetails.value, {
+        let res = await axios.post(`https://datemeapi.codejet.dev/notification/send/all`, notificationDetails.value, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }

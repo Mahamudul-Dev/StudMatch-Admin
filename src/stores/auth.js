@@ -25,7 +25,7 @@ export const AuthStore = defineStore('auth', () => {
   const login = async ()=>{
       isLoading.value = true;
       try {
-        let res = await axios.post('https://api.studmatch.app/auth/adminLogin',credentials);
+        let res = await axios.post('https://datemeapi.codejet.dev/auth/adminLogin',credentials);
 
         if(res.data.error == false && res.data.token){
             localStorage.setItem('token', res.data.token);

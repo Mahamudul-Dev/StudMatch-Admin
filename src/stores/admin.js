@@ -48,7 +48,7 @@ export const AdminStore = defineStore('admin', () => {
         admins.value = [];
         isLoading.value = true;
 
-        let res = await axios.get(`https://api.studmatch.app/admin/`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/admin/`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -69,7 +69,7 @@ export const AdminStore = defineStore('admin', () => {
         isLoading.value = true;
 
         try {
-            let res = await axios.post(`https://api.studmatch.app/admin/`, adminForm.value, {
+            let res = await axios.post(`https://datemeapi.codejet.dev/admin/`, adminForm.value, {
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
@@ -94,7 +94,7 @@ export const AdminStore = defineStore('admin', () => {
 
         HSOverlay.open('#edit-admin');
 
-        let res = await axios.get(`https://api.studmatch.app/admin/${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/admin/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -118,7 +118,7 @@ export const AdminStore = defineStore('admin', () => {
         admins.value = [];
         isLoading.value = true;
         
-        let res = await axios.put(`https://api.studmatch.app/admin/${adminForm.value.id}`, adminForm.value, {
+        let res = await axios.put(`https://datemeapi.codejet.dev/admin/${adminForm.value.id}`, adminForm.value, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -137,7 +137,7 @@ export const AdminStore = defineStore('admin', () => {
         isLoading.value = true;
         admins.value = [];
 
-        let res = await axios.delete(`https://api.studmatch.app/admin/${id}`, {
+        let res = await axios.delete(`https://datemeapi.codejet.dev/admin/${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }

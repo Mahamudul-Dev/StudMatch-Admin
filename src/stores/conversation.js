@@ -25,7 +25,7 @@ export const ConversationStore = defineStore('conversation', () => {
         userConversations.value = [];
         isSkeleton.value = true;
 
-        let res = await axios.get(`https://api.studmatch.app/conversations/?userId=${id}`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/conversations/?userId=${id}`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -45,7 +45,7 @@ export const ConversationStore = defineStore('conversation', () => {
         isSkeleton.value = true;
         // HSOverlay.open('#show-institute');
 
-        let res = await axios.get(`https://api.studmatch.app/conversations/1`, {
+        let res = await axios.get(`https://datemeapi.codejet.dev/conversations/1`, {
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }

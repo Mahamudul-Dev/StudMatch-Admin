@@ -85,7 +85,7 @@ const userStore = UserStore();
                             <div class="grid grid-cols-3 gap-4">
                                
                                 <div class="flex items-center space-x-4">
-                                    <img src="https://api.studmatch.app/file/profilePicture/1727704407853.jpg" alt="Nilima Akhi" class="w-16 h-16 rounded-full object-cover">
+                                    <img src="https://datemeapi.codejet.dev/file/profilePicture/1727704407853.jpg" alt="Nilima Akhi" class="w-16 h-16 rounded-full object-cover">
                                     <div>
                                         <p class="font-bold">Nilima Akhi</p>
                                         <p class="text-gray-600">Khulna, Bangladesh</p>
@@ -94,7 +94,7 @@ const userStore = UserStore();
 
                                 
                                 <div class="flex items-center space-x-4">
-                                    <img src="https://api.studmatch.app/file/profilePicture/1727705998032.jpg" alt="Olivia Brown" class="w-16 h-16 rounded-full object-cover">
+                                    <img src="https://datemeapi.codejet.dev/file/profilePicture/1727705998032.jpg" alt="Olivia Brown" class="w-16 h-16 rounded-full object-cover">
                                     <div>
                                         <p class="font-bold">Olivia Brown</p>
                                         <p class="text-gray-600">Los Angeles, USA</p>
@@ -103,7 +103,7 @@ const userStore = UserStore();
 
                                 
                                 <div class="flex items-center space-x-4">
-                                    <img src="https://api.studmatch.app/file/profilePicture/1727708153786.jpg" alt="Isabella Martinez" class="w-16 h-16 rounded-full object-cover">
+                                    <img src="https://datemeapi.codejet.dev/file/profilePicture/1727708153786.jpg" alt="Isabella Martinez" class="w-16 h-16 rounded-full object-cover">
                                     <div>
                                         <p class="font-bold">Isabella Martinez</p>
                                         <p class="text-gray-600">Phoenix, USA</p>

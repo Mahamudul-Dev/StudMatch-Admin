@@ -23,7 +23,7 @@ export const DashboardStore = defineStore('dashboard', () => {
 
 
     const getDashboardInfos = async () => {
-        let res = await axios.get('https://api.studmatch.app/dashboard/count',{
+        let res = await axios.get('https://datemeapi.codejet.dev/dashboard/count',{
             headers: {
                 'Authorization': `Bearer ${auth.token}`
             }
@@ -47,7 +47,7 @@ export const DashboardStore = defineStore('dashboard', () => {
         usersIsLoading.value = true;
         latestUsers.value = [];
         try {
-            let res = await axios.post('https://api.studmatch.app/user/filter?page=1&limit=5&key=status&value=APPROVED',{
+            let res = await axios.post('https://datemeapi.codejet.dev/user/filter?page=1&limit=5&key=status&value=APPROVED',{
                 headers: {
                     'Authorization': `Bearer ${auth.token}`,
                     'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ export const DashboardStore = defineStore('dashboard', () => {
         institutesIsLoading.value = true;
         latestInstitutes.value = [];
         try {
-            let res = await axios.get('https://api.studmatch.app/institute?page=1&limit=5',{
+            let res = await axios.get('https://datemeapi.codejet.dev/institute?page=1&limit=5',{
                 headers: {
                     'Authorization': `Bearer ${auth.token}`
                 }
